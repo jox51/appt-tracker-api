@@ -1,5 +1,5 @@
 // import model/schema to initiate actions
-const Appt = require("../models/Appt")
+const Appt = require("../models/appt")
 
 const createAppt = async (req, res) => {
   const {
