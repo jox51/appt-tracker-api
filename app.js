@@ -1,6 +1,8 @@
 require("dotenv").config()
 //async errors
 require("express-async-errors")
+const cors = require("cors")
+
 const express = require("express")
 const app = express()
 
@@ -10,7 +12,10 @@ const notFound = require("./middleware/notFound")
 const errorHandler = require("./middleware/errorHandlerMiddleware")
 
 // parse json
+
 app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+app.use(cors())
 //routes. First arg is path. Below route where we will perform our API ops
 app.use("/api/v1/appts", apptsRouter)
 app.use(notFound)

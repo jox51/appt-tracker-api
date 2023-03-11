@@ -1,10 +1,18 @@
 // import model/schema to initiate actions
-const Appt = require("../models/appt")
+const Appt = require("../models/Appt")
 
 const createAppt = async (req, res) => {
-  console.log(req.body)
-  // const appt = await Appt.create(req.body)
-  res.status(200).json({ appt: req.body })
+  const {
+    title,
+    startDate,
+    endDate,
+    locationField: location
+  } = req.body.data.appts
+  console.log(req.body.data.appts)
+  console.log(title, location)
+  const appt = await Appt.create({ title, startDate, endDate, location })
+  console.log("appt :", appt)
+  res.send("success")
 }
 
 module.exports = {
