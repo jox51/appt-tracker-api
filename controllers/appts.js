@@ -2,13 +2,8 @@
 const Appt = require("../models/appt")
 
 const createAppt = async (req, res) => {
-  const {
-    title,
-    startDate,
-    endDate,
-    locationField: location
-  } = req.body.data.appts
-  console.log(req.body.data.appts)
+  const { title, startDate, endDate, location } = req.body
+  console.log("test erro", req.body)
   console.log(title, location)
   const appt = await Appt.create({ title, startDate, endDate, location })
   console.log("appt :", appt)

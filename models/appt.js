@@ -17,7 +17,7 @@ const apptSchema = new mongoose.Schema({
   },
   location: {
     type: String,
-    required: [true, "End date must be provided"]
+    required: [true, "Location must be provided"]
   },
   createdAt: {
     type: Date,
