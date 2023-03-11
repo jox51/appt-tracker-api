@@ -19,7 +19,7 @@ app.use(cors())
 //routes. First arg is path. Below route where we will perform our API ops
 app.use("/api/v1/appts", apptsRouter)
 app.use(notFound)
-app.use(errorHandler)
+// app.use(errorHandler)
 
 const port = process.env.PORT || 4000
 
